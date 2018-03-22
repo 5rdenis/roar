@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Table Using DIVs</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.div-table{
+			display: table; 
+			border: 1px solid #003399;
+			position: relative;
+		}
+		.div-table-caption{
+			display:table-caption; 
+			background:#85EB6A; 
+			text-align: center; 
+			border: 1px solid #003399;
+			position: relative;
+		}
+		.head{
+			background:#f4b042;
+		}
+		.div-table-row{
+			display: table-row; 
+			padding: 10px;
+			text-align: center; 
+			border: 1px solid #003399;
+			position: relative;
+		} 
+		.div-table-col{
+			display: table-cell; 
+			padding: 10px; 
+			border: 1px solid #003399; 
+			text-align: center; 
+			width: 10%;
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="div-table">
+		<div class="div-table-caption">Расписание</div>
+		<div class="div-table-row head">
+		  <div class="div-table-col">Понедельник</div>
+			<div class="div-table-col">Вторник</div>
+			<div class="div-table-col">Среда</div>
+			<div class="div-table-col">Четверг</div>
+		</div>
+		<div class="div-table-row">
+			<div class="div-table-col">Программирование</div>
+			<div class="div-table-col">Математика</div>
+			<div class="div-table-col">Физ-культура</div>
+			<div class="div-table-col">Черчение</div>
+		</div>
+		<div class="div-table-row">
+			<div class="div-table-col">Русский язык</div>
+			<div class="div-table-col">Программирование</div>
+			<div class="div-table-col">История</div>
+			<div class="div-table-col">Социология</div>
+		</div>
+	</div>
+</body>
+</html>

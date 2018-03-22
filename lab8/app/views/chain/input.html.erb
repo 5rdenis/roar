@@ -1,0 +1,6 @@
+<h1>Chain#input</h1>
+<%= form_tag("/chain/view", :method => "get") do %>
+  <%= label_tag("Input array:") %>
+  <%= text_field_tag(:n) %>  <br/><br/>
+  <%= submit_tag("Print chain") %>
+<% end %>

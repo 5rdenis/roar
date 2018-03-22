@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>form</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h1>Введите информацию о себе</h1>
+	<form action="/form_submit" method="get">
+	   Имя: <input type="text" name="fname"/><br>
+	   Фамилия: <input type="text" name="lname"/><br>
+	   Пол:<input type="radio" id="r1" name="gender" value="м"/><label for="r1">м</label> <input type="radio" id="r2" name="gender" value="ж"/><label for="r2">ж</label><br>
+	   Кафедра: <select>
+	   	<option>ИУ1</option>
+	   	<option>ИУ2</option>
+	   	<option>ИУ3</option>
+		<option>ИУ4</option>
+	   	<option>ИУ5</option>
+		<option selected>ИУ6</option>
+	   	<option>ИУ7</option>
+		<option>ИУ8</option>
+	   </select><br>
+       <input type="submit" value="Отправить"/>
+	</form>
+	
+</body>
+</html>

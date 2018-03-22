@@ -1,0 +1,45 @@
+<h1>Chain#view</h1>
+<%= link_to "Try differnt array?", :chain_input %><br><br>
+<% if @res.is_a? String %>
+  <p><%= @res %></p>
+<% else %>
+ <table border="1" cellpadding="0" cellspacing="0">
+ 	<thead>
+ 		<tr>
+ 		<th>Исходная цепочка</th>	
+ 	</tr>
+ </thead>
+    <% @initial.each_with_index do |x|%>
+      <tr>
+        <th><%= x %></th>
+  <% end %>
+      </tr>
+  </table>
+   <table border="1" cellpadding="0" cellspacing="0">
+ 	<thead>
+ 		<tr>
+ 		<th>Все найденные</th>
+ 	</tr>
+ </thead>
+    <% @alls.each do |x|%>
+      <tr>
+        <th><%= x %></th>
+  <% end %>
+      </tr>
+  </table>
+   <table border="1" cellpadding="0" cellspacing="0">
+ 	<thead>
+ 		<tr>
+ 		<th>Самая длинная</th>
+ 	</tr>
+ </thead>
+    <% @res.each_with_index do |x|%>
+      <tr>
+        <th><%= x %></th>
+  <% end %>
+      </tr>
+  </table>
+  <p>Исходная цепочка <%= @initial %></p>
+  <p>Все найденные последовательности <%= @alls %></p>
+  <p>Самая длинная последователность <%= @res %></p>
+<% end %>
