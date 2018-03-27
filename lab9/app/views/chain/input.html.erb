@@ -1,0 +1,7 @@
+<h1>Chain#input</h1>
+<%= form_tag("/chain/view.json", :method => "get", remote: true, id: 'chain_form') do %>
+  <%= label_tag("Input array:") %>
+  <%= text_field_tag(:n) %>  <br/><br/>
+  <%= submit_tag("Print chain") %>
+  <div id="result"></div>
+<% end %>
