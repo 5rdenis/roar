@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xslt"?>
+<objects type="array">
+  <object>
+    <index type="integer">0</index>
+    <elem>000000</elem>
+  </object>
+  <object>
+    <index type="integer">1</index>
+    <elem>001001</elem>
+  </object>
+  <object>
+    <index type="integer">2</index>
+    <elem>001010</elem>
+  </object>
+  <object>
+    <index type="integer">3</index>
+    <elem>001100</elem>
+  </object>
+  <object>
+    <index type="integer">4</index>
+    <elem>002002</elem>
+  </object>
+</objects>
