@@ -1,0 +1,290 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "chains"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "chains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "initial" varchar, "all" varchar, "result" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180403115849)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2018-04-03 23:57:37.977175"], ["updated_at", "2018-04-03 23:57:37.977175"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "chains"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:57:38.070044', '2018-04-03 23:57:38.070044', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:57:38.070044', '2018-04-03 23:57:38.070044', 298486374)[0m
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+ChainControllerTest: test_should_get_Invalid_n!_for_empty_param
+---------------------------------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 02:57:38 +0300
+Processing by ChainController#view as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ChainControllerTest: test_should_get_input
+------------------------------------------
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:57:38 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 164ms (Views: 163.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ChainControllerTest: test_should_get_view
+-----------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 02:57:38 +0300
+Processing by ChainController#view as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "chains"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:58:06.045799', '2018-04-03 23:58:06.045799', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:58:06.045799', '2018-04-03 23:58:06.045799', 298486374)[0m
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ChainControllerTest: test_should_get_input
+------------------------------------------
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:58:06 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 111ms (Views: 104.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ChainControllerTest: test_should_get_view
+-----------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 02:58:06 +0300
+Processing by ChainController#view as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+ChainControllerTest: test_should_get_Invalid_n!_for_empty_param
+---------------------------------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 02:58:06 +0300
+Processing by ChainController#view as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "chains"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:58:25.335372', '2018-04-03 23:58:25.335372', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:58:25.335372', '2018-04-03 23:58:25.335372', 298486374)[0m
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ChainControllerTest: test_should_get_Invalid_array!_for_empty_param
+-------------------------------------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 02:58:25 +0300
+Processing by ChainController#view as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ChainControllerTest: test_should_get_input
+------------------------------------------
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:58:25 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 104ms (Views: 102.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ChainControllerTest: test_should_get_view
+-----------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 02:58:25 +0300
+Processing by ChainController#view as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "chains"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:58:42.029335', '2018-04-03 23:58:42.029335', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:58:42.029335', '2018-04-03 23:58:42.029335', 298486374)[0m
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ChainControllerTest: test_should_get_view
+-----------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 02:58:42 +0300
+Processing by ChainController#view as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ChainControllerTest: test_should_get_input
+------------------------------------------
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:58:42 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 103ms (Views: 102.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "chains"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:59:39.390651', '2018-04-03 23:59:39.390651', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-03 23:59:39.390651', '2018-04-03 23:59:39.390651', 298486374)[0m
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ChainControllerTest: test_should_get_input
+------------------------------------------
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:59:39 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 111ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ChainControllerTest: test_should_get_view
+-----------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 02:59:39 +0300
+Processing by ChainController#view as HTML
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "0"], ["LIMIT", 1]]
+not found, calculating and adding data to db
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "chains"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-04 00:00:15.122538', '2018-04-04 00:00:15.122538', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-04 00:00:15.122538', '2018-04-04 00:00:15.122538', 298486374)[0m
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ChainControllerTest: test_should_get_view
+-----------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 03:00:15 +0300
+Processing by ChainController#view as HTML
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", ""], ["LIMIT", 1]]
+not found, calculating and adding data to db
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ChainControllerTest: test_should_get_input
+------------------------------------------
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:00:15 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 103ms (Views: 101.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "chains"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-04 00:00:33.130800', '2018-04-04 00:00:33.130800', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-04 00:00:33.130800', '2018-04-04 00:00:33.130800', 298486374)[0m
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ChainControllerTest: test_should_get_view
+-----------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 03:00:33 +0300
+Processing by ChainController#view as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ChainControllerTest: test_should_get_input
+------------------------------------------
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:00:33 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 111ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "chains"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-04 00:01:03.465436', '2018-04-04 00:01:03.465436', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-04 00:01:03.465436', '2018-04-04 00:01:03.465436', 298486374)[0m
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ChainControllerTest: test_should_get_view
+-----------------------------------------
+Started GET "/chain/view" for 127.0.0.1 at 2018-04-04 03:01:03 +0300
+Processing by ChainController#view as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ChainControllerTest: test_should_get_input
+------------------------------------------
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:01:03 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 152ms (Views: 150.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "chains"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-04 00:06:58.069866', '2018-04-04 00:06:58.069866', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "chains" ("created_at", "updated_at", "id") VALUES ('2018-04-04 00:06:58.069866', '2018-04-04 00:06:58.069866', 298486374)[0m
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ChainTest: test_should_not_save_duplicates_by_from
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+ChainTest: test_should_save_number_with_data
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+ChainTest: test_shold_not_save_empty_record
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mChain Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ChainTest: test_should_find_after_creation
+------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m

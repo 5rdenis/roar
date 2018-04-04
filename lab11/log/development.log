@@ -1,0 +1,1427 @@
+Started GET "/" for 127.0.0.1 at 2018-04-03 14:58:19 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 93ms (Views: 6.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChains (20180403115849)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "chains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from" integer, "result" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180403115849"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-03 12:00:34.536852"], ["updated_at", "2018-04-03 12:00:34.536852"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-04-03 15:10:17 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 353ms (Views: 344.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1%2C2%2C3%2C2%2C5%2C6%2C4%2C3%2C7%2C8%2C6%2C43%2C2%2C1&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:10:29 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1,2,3,2,5,6,4,3,7,8,6,43,2,1", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.5ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 1.1ms)
+
+
+  
+NameError (undefined local variable or method `n' for #<ChainController:0x00007fb77ee54f88>):
+  
+app/controllers/chain_controller.rb:51:in `calculate'
+app/controllers/chain_controller.rb:17:in `view'
+Started GET "/chain/view?utf8=%E2%9C%93&n=1%2C2%2C3%2C2%2C5%2C6%2C4%2C3%2C7%2C8%2C6%2C43%2C2%2C1&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:11:49 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1,2,3,2,5,6,4,3,7,8,6,43,2,1", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.7ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "chains" ("result", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["result", "Invalid array"], ["created_at", "2018-04-03 12:11:59.831111"], ["updated_at", "2018-04-03 12:11:59.831111"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 20.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:12:01 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+3+9+8+7+6+5+6+7+2+3+4+5&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:12:14 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 3 9 8 7 6 5 6 7 2 3 4 5", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 3, 9, 8, 7, 6, 5, 6, 7, 2, 3, 4, 5) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (undefined local variable or method `n' for #<ChainController:0x00007fb77e8b0870>
+Did you mean?  @n):
+  
+app/controllers/chain_controller.rb:54:in `calculate'
+app/controllers/chain_controller.rb:17:in `view'
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+3+9+8+7+6+5+6+7+2+3+4+5&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:12:31 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 3 9 8 7 6 5 6 7 2 3 4 5", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 3, 9, 8, 7, 6, 5, 6, 7, 2, 3, 4, 5) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chains" ("result", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["result", "[1, 2, 3, 9]"], ["created_at", "2018-04-03 12:12:31.681215"], ["updated_at", "2018-04-03 12:12:31.681215"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 13.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:12:35 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+3+1+9+87+6+5+5+4+4+5+78+&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:12:44 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 3 1 9 87 6 5 5 4 4 5 78 ", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 3, 1, 9, 87, 6, 5, 5, 4, 4, 5, 78) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chains" ("result", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["result", "[1, 2, 3]"], ["created_at", "2018-04-03 12:12:44.745795"], ["updated_at", "2018-04-03 12:12:44.745795"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:12:45 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:15:19 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.5ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `transform_data' for #<Chain:0x00007fb77b95e7c0>
+Did you mean?  transaction):
+  
+app/controllers/chain_controller.rb:8:in `map'
+app/controllers/chain_controller.rb:8:in `all_records'
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:17:40 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 23ms (Views: 12.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:17:57 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1%2C2%2C3%2C45%2C6%2C3%2C4%2C3%2C2%2C1&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:18:04 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1,2,3,45,6,3,4,3,2,1", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:18:06 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+9+7+9+8+8+7+5+7+5+0+3+4+5&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:18:23 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 9 7 9 8 8 7 5 7 5 0 3 4 5", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 9, 7, 9, 8, 8, 7, 5, 7, 5, 0, 3, 4, 5) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:18:25 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:18:26 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:18:36 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:18:38 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:18:39 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:18:41 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+5+6+4+3+2+1+2+3+1+9+8+7&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:18:53 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 5 6 4 3 2 1 2 3 1 9 8 7", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 5, 6, 4, 3, 2, 1, 2, 3, 1, 9, 8, 7) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:18:55 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:18:56 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.3ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:19:19 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-03 15:19:29 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1++2+9+8+6+5+4+6+83+4+6+5+2+1&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:19:37 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1  2 9 8 6 5 4 6 83 4 6 5 2 1", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 9, 8, 6, 5, 4, 6, 83, 4, 6, 5, 2, 1) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:19:40 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:19:41 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:19:47 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:20:38 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:20:48 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:21:29 +0300
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:21:29 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#input as HTML
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (2.1ms)
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 194ms (Views: 192.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 203ms (Views: 195.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+9+8+7+5+7+5+8+9+6+5+7+5+4+5+5+67+8&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:21:37 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 9 8 7 5 7 5 8 9 6 5 7 5 4 5 5 67 8", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.5ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 9, 8, 7, 5, 7, 5, 8, 9, 6, 5, 7, 5, 4, 5, 5, 67, 8) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 12.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:21:40 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:21:41 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:21:59 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1%2C2%2C3%2C%2C1%2C5%2C3%2C1&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:22:07 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1,2,3,,1,5,3,1", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:22:08 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:22:08 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:22:23 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1%2C2%2C3%2C1k%2C1&commit=Print+chain" for 127.0.0.1 at 2018-04-03 15:25:08 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1,2,3,1k,1", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.3ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-03 15:25:09 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-03 15:25:10 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:18:54 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 201ms (Views: 189.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:18:56 +0300
+Processing by ChainController#input as HTML
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:18:56 +0300
+  Rendering chain/input.html.erb within layouts/application
+Processing by ChainController#input as HTML
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+3+1+2+87+7+6+7+5+65+4+3+2+1+&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:19:06 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 3 1 2 87 7 6 7 5 65 4 3 2 1 ", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.6ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 3, 1, 2, 87, 7, 6, 7, 5, 65, 4, 3, 2, 1) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 11.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:19:09 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:19:10 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:21:27 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 173ms (Views: 165.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:21:28 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:21:28 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+9+8+7+5+7+5+8+9+6+5+7+5+4+5+5+67+8&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:21:56 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 9 8 7 5 7 5 8 9 6 5 7 5 4 5 5 67 8", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.3ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 9, 8, 7, 5, 7, 5, 8, 9, 6, 5, 7, 5, 4, 5, 5, 67, 8) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 10.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:24:00 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:24:01 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:25:35 +0300
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:25:45 +0300
+Started GET "/" for 127.0.0.1 at 2018-04-04 02:25:45 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.0ms)
+
+
+Processing by ChainController#input as HTML
+Processing by ChainController#input as HTML
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:25:45 +0300
+  Rendering chain/input.html.erb within layouts/application
+Processing by ChainController#input as HTML
+  Rendered chain/input.html.erb within layouts/application (0.3ms)
+  Rendering chain/input.html.erb within layouts/application
+  Rendering chain/input.html.erb within layouts/application
+Completed 200 OK in 18ms (Views: 17.4ms)
+
+
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+  Rendered chain/input.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 39ms (Views: 33.2ms)
+
+
+Completed 200 OK in 31ms (Views: 29.4ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1++2+9+8+6+5+4+6+83+4+6+5+2+1&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:25:57 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1  2 9 8 6 5 4 6 83 4 6 5 2 1", "commit"=>"Print chain"}
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:25:57 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 11.6ms)
+
+
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.2ms)
+
+
+  
+JSON::ParserError (751: unexpected token at 'Invalid array'):
+  
+app/controllers/chain_controller.rb:13:in `view'
+Started GET "/chain/view?utf8=%E2%9C%93&n=1++2+9+8+6+5+4+6+83+4+6+5+2+1&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:26:19 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1  2 9 8 6 5 4 6 83 4 6 5 2 1", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 9, 8, 6, 5, 4, 6, 83, 4, 6, 5, 2, 1) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:26:19 +0300
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 12.0ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:27:23 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 14.7ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:27:23 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:28:01 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 10.7ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:28:03 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+3+4+3+2+1+2+3+1+2+3+4+&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:28:13 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 3 4 3 2 1 2 3 1 2 3 4 ", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 3, 4, 3, 2, 1, 2, 3, 1, 2, 3, 4) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:28:21 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:28:21 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:29:52 +0300
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:29:52 +0300
+  
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+  
+activerecord (5.1.6) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+activerecord (5.1.6) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChains (20180403115849)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "chains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from" integer, "result" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180403115849"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-03 23:30:07.970073"], ["updated_at", "2018-04-03 23:30:07.970073"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:30:21 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 175ms (Views: 167.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:30:23 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:30:25 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+3+1+2+3+2+1+2+3+4+3+2+1&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:30:33 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 3 1 2 3 2 1 2 3 4 3 2 1", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 3, 1, 2, 3, 2, 1, 2, 3, 4, 3, 2, 1) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 24ms (Views: 10.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:30:34 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:30:35 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:30:36 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+3+4+3+2+1+2+3+4+5+6+&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:31:57 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 3 4 3 2 1 2 3 4 5 6 ", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 5, 6) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 167ms (Views: 148.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:31:59 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:32:00 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:32:00 +0300
+Processing by ChainController#input as HTML
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:33:03 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 11.7ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1++2+9+8+6+5+4+6+83+4+6+5+2+1&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:33:07 +0300
+Processing by ChainController#view as HTML
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:33:07 +0300
+  Parameters: {"utf8"=>"✓", "n"=>"1  2 9 8 6 5 4 6 83 4 6 5 2 1", "commit"=>"Print chain"}
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 11.6ms)
+
+
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN (1, 2, 9, 8, 6, 5, 4, 6, 83, 4, 6, 5, 2, 1) LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 13.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:33:09 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChains (20180403115849)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "chains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from" varchar, "result" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180403115849"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-03 23:37:11.277340"], ["updated_at", "2018-04-03 23:37:11.277340"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:37:46 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 13ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:37:48 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 160ms (Views: 158.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+1+2+3+2+12+23+23+123+12+3&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:37:52 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 1 2 3 2 12 23 23 123 12 3", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN ('1', '2', '1', '2', '3', '2', '12', '23', '23', '123', '12', '3') LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" = ? LIMIT ?[0m  [["from", "[1, 2, 1, 2, 3, 2, 12, 23, 23, 123, 12, 3]"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chains" ("from", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["from", "[1, 2, 1, 2, 3, 2, 12, 23, 23, 123, 12, 3]"], ["result", "[1, 2, 3]"], ["created_at", "2018-04-03 23:37:52.012551"], ["updated_at", "2018-04-03 23:37:52.012551"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 12.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:37:52 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:37:53 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:38:15 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+3+0+8+7+45+308+112+115+208+3+4+5&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:38:23 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 3 0 8 7 45 308 112 115 208 3 4 5", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN ('1', '2', '3', '0', '8', '7', '45', '308', '112', '115', '208', '3', '4', '5') LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" = ? LIMIT ?[0m  [["from", "[1, 2, 3, 0, 8, 7, 45, 308, 112, 115, 208, 3, 4, 5]"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "chains" ("from", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["from", "[1, 2, 3, 0, 8, 7, 45, 308, 112, 115, 208, 3, 4, 5]"], ["result", "[1, 2, 3]"], ["created_at", "2018-04-03 23:38:23.131878"], ["updated_at", "2018-04-03 23:38:23.131878"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 11.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:38:25 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:38:26 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChains (20180403115849)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "chains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from" varchar, "all" varchar, "result" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180403115849"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-03 23:40:40.878206"], ["updated_at", "2018-04-03 23:40:40.878206"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:43:51 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 169ms (Views: 161.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+1+2+3+2+12+23+23+123+12+3&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:43:56 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 1 2 3 2 12 23 23 123 12 3", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."from" IN ('1', '2', '1', '2', '3', '2', '12', '23', '23', '123', '12', '3') LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:43:56 +0300
+not found, calculating and adding data to db
+Processing by ChainController#input as HTML
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."from" = ? LIMIT ?[0m  [["from", "[1, 2, 1, 2, 3, 2, 12, 23, 23, 123, 12, 3]"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chains" ("from", "all", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["from", "[1, 2, 1, 2, 3, 2, 12, 23, 23, 123, 12, 3]"], ["all", "[[1, 2], [1, 2, 3], [2, 12, 23], [23, 123]]"], ["result", "[1, 2, 3]"], ["created_at", "2018-04-03 23:43:56.914715"], ["updated_at", "2018-04-03 23:43:56.914715"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 46ms (Views: 23.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:43:58 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.4ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:45:21 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 173ms (Views: 166.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:45:23 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:45:25 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 16ms (Views: 6.7ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChains (20180403115849)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "chains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "initial" varchar, "all" varchar, "result" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180403115849"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-03 23:45:42.442395"], ["updated_at", "2018-04-03 23:45:42.442395"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:45:53 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 170ms (Views: 160.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:45:56 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:45:57 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+1+2+3+2+12+23+23+123+12+3&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:46:02 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 1 2 3 2 12 23 23 123 12 3", "commit"=>"Print chain"}
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:46:02 +0300
+  [1m[36mChain Load (0.3ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" IN ('1', '2', '1', '2', '3', '2', '12', '23', '23', '123', '12', '3') LIMIT ?[0m  [["LIMIT", 1]]
+Processing by ChainController#input as HTML
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Rendering chain/input.html.erb within layouts/application
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "[1, 2, 1, 2, 3, 2, 12, 23, 23, 123, 12, 3]"], ["LIMIT", 1]]
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chains" ("initial", "all", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["initial", "[1, 2, 1, 2, 3, 2, 12, 23, 23, 123, 12, 3]"], ["all", "[[1, 2], [1, 2, 3], [2, 12, 23], [23, 123]]"], ["result", "[1, 2, 3]"], ["created_at", "2018-04-03 23:46:02.570130"], ["updated_at", "2018-04-03 23:46:02.570130"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 42ms (Views: 19.8ms | ActiveRecord: 3.7ms)
+
+
+Completed 200 OK in 42ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:46:04 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:46:10 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=21+3+4+5+3+1+2+3+4+5+4+2+1+2+3+&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:46:15 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"21 3 4 5 3 1 2 3 4 5 4 2 1 2 3 ", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" IN ('21', '3', '4', '5', '3', '1', '2', '3', '4', '5', '4', '2', '1', '2', '3') LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "[21, 3, 4, 5, 3, 1, 2, 3, 4, 5, 4, 2, 1, 2, 3]"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "chains" ("initial", "all", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["initial", "[21, 3, 4, 5, 3, 1, 2, 3, 4, 5, 4, 2, 1, 2, 3]"], ["all", "[[3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3]]"], ["result", "[1, 2, 3, 4, 5]"], ["created_at", "2018-04-03 23:46:15.810695"], ["updated_at", "2018-04-03 23:46:15.810695"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:46:18 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:46:19 +0300
+Processing by ChainController#all_records as HTML
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:46:19 +0300
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+Processing by ChainController#input as HTML
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+  Rendering chain/input.html.erb within layouts/application
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:52:22 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 11.6ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=3+2+23+45+54+645+734+5+5+65+6&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:52:28 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"3 2 23 45 54 645 734 5 5 65 6", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.4ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" IN ('3', '2', '23', '45', '54', '645', '734', '5', '5', '65', '6') LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "[3, 2, 23, 45, 54, 645, 734, 5, 5, 65, 6]"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "chains" ("initial", "all", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["initial", "[3, 2, 23, 45, 54, 645, 734, 5, 5, 65, 6]"], ["all", "[[2, 23, 45, 54, 645, 734], [5, 65]]"], ["result", "[[2, 23, 45, 54, 645, 734], 0]"], ["created_at", "2018-04-03 23:52:28.206808"], ["updated_at", "2018-04-03 23:52:28.206808"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 12.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:53:14 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1++2+9+8+6+5+4+6+83+4+6+5+2+1&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:53:18 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1  2 9 8 6 5 4 6 83 4 6 5 2 1", "commit"=>"Print chain"}
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:53:18 +0300
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" IN ('1', '2', '9', '8', '6', '5', '4', '6', '83', '4', '6', '5', '2', '1') LIMIT ?[0m  [["LIMIT", 1]]
+Processing by ChainController#input as HTML
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "[1, 2, 9, 8, 6, 5, 4, 6, 83, 4, 6, 5, 2, 1]"], ["LIMIT", 1]]
+  Rendering chain/input.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "chains" ("initial", "all", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["initial", "[1, 2, 9, 8, 6, 5, 4, 6, 83, 4, 6, 5, 2, 1]"], ["all", "[[1, 2, 9], [4, 6, 83], [4, 6]]"], ["result", "[[1, 2, 9], 0]"], ["created_at", "2018-04-03 23:53:18.533439"], ["updated_at", "2018-04-03 23:53:18.533439"]]
+  Rendered chain/input.html.erb within layouts/application (0.7ms)
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 34ms (Views: 20.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=21+3+4+5+3+1+2+3+4+5+4+2+1+2+3+&commit=Print+chain" for 127.0.0.1 at 2018-04-04 02:53:29 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"21 3 4 5 3 1 2 3 4 5 4 2 1 2 3 ", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.3ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" IN ('21', '3', '4', '5', '3', '1', '2', '3', '4', '5', '4', '2', '1', '2', '3') LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "[21, 3, 4, 5, 3, 1, 2, 3, 4, 5, 4, 2, 1, 2, 3]"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 11.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 02:54:53 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 11.4ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 02:54:54 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChains (20180403115849)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "chains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "initial" varchar, "all" varchar, "result" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180403115849"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-03 23:55:22.382300"], ["updated_at", "2018-04-03 23:55:22.382300"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:02:39 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 158ms (Views: 151.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 03:02:43 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:02:43 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+3+0+8+7+45+308+112+115+208+3+4+5&commit=Print+chain" for 127.0.0.1 at 2018-04-04 03:02:50 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 3 0 8 7 45 308 112 115 208 3 4 5", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" IN ('1', '2', '3', '0', '8', '7', '45', '308', '112', '115', '208', '3', '4', '5') LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:02:50 +0300
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ChainController#input as HTML
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "[1, 2, 3, 0, 8, 7, 45, 308, 112, 115, 208, 3, 4, 5]"], ["LIMIT", 1]]
+  Rendering chain/input.html.erb within layouts/application
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chains" ("initial", "all", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["initial", "[1, 2, 3, 0, 8, 7, 45, 308, 112, 115, 208, 3, 4, 5]"], ["all", "[[1, 2, 3], [0, 8], [7, 45, 308], [112, 115, 208], [3, 4, 5]]"], ["result", "[1, 2, 3]"], ["created_at", "2018-04-04 00:02:50.419928"], ["updated_at", "2018-04-04 00:02:50.419928"]]
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 25.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 03:02:53 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:02:59 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=1+2+1+2+3+2+12+23+23+123+12+3&commit=Print+chain" for 127.0.0.1 at 2018-04-04 03:03:04 +0300
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:03:04 +0300
+Processing by ChainController#view as HTML
+Processing by ChainController#input as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"1 2 1 2 3 2 12 23 23 123 12 3", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" IN ('1', '2', '1', '2', '3', '2', '12', '23', '23', '123', '12', '3') LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "[1, 2, 1, 2, 3, 2, 12, 23, 23, 123, 12, 3]"], ["LIMIT", 1]]
+  Rendering chain/input.html.erb within layouts/application
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chains" ("initial", "all", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["initial", "[1, 2, 1, 2, 3, 2, 12, 23, 23, 123, 12, 3]"], ["all", "[[1, 2], [1, 2, 3], [2, 12, 23], [23, 123]]"], ["result", "[1, 2, 3]"], ["created_at", "2018-04-04 00:03:04.612461"], ["updated_at", "2018-04-04 00:03:04.612461"]]
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 35ms (Views: 14.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=3+2+23+45+54+645+734+5+5+65+6&commit=Print+chain" for 127.0.0.1 at 2018-04-04 03:03:11 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"3 2 23 45 54 645 734 5 5 65 6", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" IN ('3', '2', '23', '45', '54', '645', '734', '5', '5', '65', '6') LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "[3, 2, 23, 45, 54, 645, 734, 5, 5, 65, 6]"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chains" ("initial", "all", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["initial", "[3, 2, 23, 45, 54, 645, 734, 5, 5, 65, 6]"], ["all", "[[2, 23, 45, 54, 645, 734], [5, 65]]"], ["result", "[2, 23, 45, 54, 645, 734]"], ["created_at", "2018-04-04 00:03:11.850422"], ["updated_at", "2018-04-04 00:03:11.850422"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 12.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 03:03:16 +0300
+Processing by ChainController#all_records as HTML
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:03:16 +0300
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+Processing by ChainController#input as HTML
+  [1m[36mChain Load (0.3ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+  Rendering chain/input.html.erb within layouts/application
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+  Rendered chain/input.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/view?utf8=%E2%9C%93&n=3+2+23+45+54+645+734+5+5+65+6&commit=Print+chain" for 127.0.0.1 at 2018-04-04 03:03:33 +0300
+Processing by ChainController#view as HTML
+  Parameters: {"utf8"=>"✓", "n"=>"3 2 23 45 54 645 734 5 5 65 6", "commit"=>"Print chain"}
+  [1m[36mChain Load (0.2ms)[0m  [1m[34mSELECT  "chains".* FROM "chains" WHERE "chains"."initial" IN ('3', '2', '23', '45', '54', '645', '734', '5', '5', '65', '6') LIMIT ?[0m  [["LIMIT", 1]]
+not found, calculating and adding data to db
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "chains" WHERE "chains"."initial" = ? LIMIT ?[0m  [["initial", "[3, 2, 23, 45, 54, 645, 734, 5, 5, 65, 6]"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering chain/view.html.erb within layouts/application
+  Rendered chain/view.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chain/input" for 127.0.0.1 at 2018-04-04 03:03:38 +0300
+Processing by ChainController#input as HTML
+  Rendering chain/input.html.erb within layouts/application
+  Rendered chain/input.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chain/all_records?utf8=%E2%9C%93&commit=Dump+database" for 127.0.0.1 at 2018-04-04 03:03:39 +0300
+Processing by ChainController#all_records as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Dump database"}
+  [1m[36mChain Load (0.1ms)[0m  [1m[34mSELECT "chains".* FROM "chains"[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
