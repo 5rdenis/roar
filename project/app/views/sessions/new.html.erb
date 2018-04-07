@@ -1,0 +1,30 @@
+<% provide(:title, "Sign in") %>
+
+<div class = "violet main" align = center>
+<div class = "mar">
+  <h1><%= t('signin.signin') %></h1>
+</div>
+<% if !signed_in? %>
+
+
+  <div class = "mar"  >
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :name, t('signin.name') %>
+      <%= f.text_field :name %>
+<br>
+      <%= f.label :password, t('signin.pass')%>
+      <%= f.password_field :password %>
+<br>
+      <%= f.submit t('signin.submit') %>
+    <% end %>
+</div>
+<div class = "mar">
+    <p><%= t('signin.new?') %> <%= link_to  t('signin.signupnow') , signup_path,{class:"lefta"} %></p>
+  </div>
+</div>
+
+
+
+<% end %>
+

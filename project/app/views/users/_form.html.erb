@@ -1,0 +1,42 @@
+
+<% if user.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+  <ul>
+    <% user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class = "violet main" align = center>
+  <div class = "mar" >
+    <h1><%= t('signup.signup') %></h1>
+  </div>
+  <div class="mar">
+    <%= form_with(model: user, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :user_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.text_field :password, id: :user_pass, type: "password"%>
+    </div>
+
+    <div class="actions">
+      <%= form.submit t('signup.submit')%>
+    </div>
+  </div>
+  <% end %>
+  
+  <div class = "mar">
+    <p>
+      <%= link_to t('signup.back'), signin_path, {class:"lefta"} %>
+    </p>
+  </div>
+  
+</div>

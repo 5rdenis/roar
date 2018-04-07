@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>News</title>
+	<%= csrf_meta_tags %>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application.js', 'data-turbolinks-track': 'reload' %>
+
+
+</head>
+
+<body>
+<ul class="nav justify-content-center fixed-top" style="background-color: #000000; " >
+  <li class="nav-item active">
+          <a class="nav-link" style = 'color: white' href="/"><%= t('head.home') %><span class="sr-only">(current)</span></a>
+        </li>
+        <% if signed_in? %>
+          <li class="nav-item">
+            <a class="nav-link" style = 'color: white' href="/profile" ><%= t('head.profile') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style = 'color: white' href="/settings"><%= t('head.settings') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style = 'color: white' data-method="delete" href="/signout"><%= t('head.signout') %></a>
+          </li>
+          
+
+        <% else %>
+          <li class="nav-item">
+           <a class="nav-link" style = 'color: white' href="/signin"><%= t('head.signin') %></a>
+          </li>
+        <% end %>
+        <div class = locale >
+            <%= link_to 'En', locale: :en%>
+            <%= link_to 'Ru', locale: :ru%>﻿
+        </div>
+</ul>
+	
+
+  <%= yield %>
+</body>
+</html>

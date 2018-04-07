@@ -1,0 +1,25 @@
+<div class = "main">
+	<% if signed_in? %>
+	<h1><%= t('main.settings.settings') %></h1>
+
+
+	<%= form_tag("/save", method: "post") do %>
+	<p><%= t('main.settings.getnewsfrom') %></p>
+	 
+
+	  <%= check_box_tag(:ars) %>
+<%= label_tag(:ars, "Ars Technica") %>
+<br>
+<%= check_box_tag(:eng) %>
+<%= label_tag(:eng, "Engadget") %>
+<br>
+<%= check_box_tag(:hack) %>
+<%= label_tag(:hack, "Hacker News") %>
+<br>
+	  <%= submit_tag(t('main.settings.save')) %>
+	<% end %>
+
+	<% else %>
+	<p><%= t('main.settings.signup!') %></p>
+	<% end %>
+</div>

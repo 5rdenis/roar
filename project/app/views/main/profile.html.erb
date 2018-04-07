@@ -1,0 +1,13 @@
+<div class="main">
+	<% if signed_in? %>
+	<h1><%= t('main.profile.mysubs') %></h1>
+	<p><%= if @profout != "" then @profout else t('main.profile.nosubsyet') end %></p>
+
+	<form action="/settings">
+    	<input type="submit" class="btn btn-secondary" value=<%= t('main.profile.settings') %> />
+	</form>
+
+	<% else %>
+	<p><%= t('main.profile.signup!') %></p>
+	<% end %>
+</div>

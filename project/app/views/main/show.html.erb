@@ -1,0 +1,59 @@
+<% if !signed_in? %>
+
+
+
+<% end %>
+
+<div id = "leftbar" class = "leftbar">
+	<p><%= link_to t('main.show.showall'), root_path,{class:"lefta"} %></p>
+
+	<% @sourses.each_with_index do |s,i| %>
+
+	<% if !signed_in? || @subed[i] %>
+	<p><%= link_to @names[i], root_path(:from => @sourses[i]), {class:"lefta"} %></p>
+	<% end %>
+
+	<% end  %>
+</div>
+<div id="news">
+	<% if @response1 && @response1["articles"].any? %>
+
+	<div id="accordion" role="tablist" aria-multiselectable="true">
+
+		<% @response1["articles"].length.times do |i| %>
+
+		<div class="card">
+			<div class="card-header" role="tab" id= <%= "heading" + i.to_s %>>
+				<h5 class="mb-0">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href= <%= "#collapse" + i.to_s %> aria-expanded="false" aria-controls= <%= "collapse" + i.to_s %> style = 'color: #555555'>
+						<%= @response1["articles"][i]["title"] %>
+					</a>
+				</h5>
+			</div>
+			<div id= <%= "collapse" + i.to_s %> class="collapse inside" role="tabpanel" aria-labelledby= <%= "heading" + i.to_s %>>
+				<div class="card-block">
+					<p class = "desc" ><%= @response1["articles"][i]["description"] %></p>
+					<p><a href= <%= @response1["articles"][i]["url"] %> target="_blank" > <%= @response1["articles"][i]["source"]["name"] %></a></p>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+
+	<div class = mar>
+		<ul class="pagination justify-content-center">
+			<% if @page.to_i > 1 %>
+			<li class="page-item"><a class="page-link" style = 'color: #555555' href=<%= root_path(:from => @from, :page => (@page || 1).to_i - 1) %>>Previous page</a></li>
+			<% end  %>
+			<li class="page-item"><a class="page-link" style = 'color: #555555' href=<%= root_path(:from => @from, :page => (@page || 1).to_i + 1) %>>Next page</a></li>
+		</ul>
+	</div>
+
+	<% else %>
+	<p><%= t('main.show.subscribe!') %></p>
+	<% end %>
+
+
+</div>
+
+

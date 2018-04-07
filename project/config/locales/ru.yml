@@ -1,0 +1,32 @@
+ru:
+  main:
+    show:
+      showall: 'Показать все'
+      subscribe!: 'Отметьте хотя бы один пункт в настройках'
+    profile:
+      mysubs: 'Мои подписки'
+      signup!: 'Войти'
+      nosubsyet: 'Подписок еще нет'
+      settings: 'Настройки'
+    settings:
+      settings: 'Настройки'
+      getnewsfrom: 'Получать новости:'
+      save: 'Сохранить'
+      signup!: 'Войти'
+  head:
+    home: 'Домой'
+    profile: 'Профиль'
+    settings: 'Настройки'
+    signout: 'Выход'
+    signin: 'Войти'
+  signin:
+    signin: 'Вход'
+    submit: 'Войти'
+    new?: 'Впервые на сайте?'
+    signupnow: 'Регистрация'
+    name: 'Имя'
+    pass: 'Пароль'
+  signup:
+    signup: 'Регистрация'
+    back: 'Назад'
+    submit: 'Отправить'
